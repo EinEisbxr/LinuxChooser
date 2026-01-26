@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux Chooser - Finde deine perfekte Linux-Distribution</title>
+    <meta name="description" content="Finde die perfekte Linux-Distribution für dich! Beantworte einfache Fragen und erhalte eine personalisierte Empfehlung - keine Vorkenntnisse nötig." />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Linux Chooser - Finde deine perfekte Linux-Distribution" />
+    <meta property="og:description" content="Finde die perfekte Linux-Distribution für deine Bedürfnisse mit dem Linux Chooser." />
+    <meta property="og:locale" content="de_DE" />
+    <!-- TODO: Replace YOUR_DOMAIN with your production URL (e.g., https://linuxchooser.com) -->
+    <meta property="og:image" content="YOUR_DOMAIN/MO-logo_transparent_WHITE_445813.png" />
+    <meta property="og:url" content="YOUR_DOMAIN/" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Linux Chooser - Finde deine perfekte Linux-Distribution" />
+    <meta name="twitter:description" content="Finde die perfekte Linux-Distribution für dich! Beantworte einfache Fragen und erhalte eine personalisierte Empfehlung - keine Vorkenntnisse nötig." />
+    <!-- TODO: Replace YOUR_DOMAIN with your production URL -->
+    <meta name="twitter:image" content="YOUR_DOMAIN/MO-logo_transparent_WHITE_445813.png" />
+  </head>
+  <body>
+    <script>
+      // GitHub Pages SPA redirect handler
+      // Restores the path stored by 404.html and updates the URL using History API
+      (function() {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          window.history.replaceState(null, '', redirect);
+        }
+      })();
+    </script>
+    <div id="root">
+      <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #1a1a2e;
+        color: #e0e0e0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        font-size: 1.25rem;
+        margin: 0;
+      ">
+        <span style="
+          animation: pulse 1.5s ease-in-out infinite;
+        ">Laden...</span>
+      </div>
+      <style>
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      </style>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
