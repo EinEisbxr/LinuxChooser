@@ -6,24 +6,24 @@
 /* CSS Variables - Color Palette */
 :root {
   /* Background colors */
-  --bg-primary: #0f0f0f;
-  --bg-secondary: #1a1a2e;
-  --bg-card: #16213e;
-  --bg-card-hover: #1f2a4a;
-  --bg-hover: #252542;
-  --bg-input: #1f1f1f;
+  --bg-primary: #0d0d11;
+  --bg-secondary: #151519;
+  --bg-card: #1a1a1f;
+  --bg-card-hover: #222228;
+  --bg-hover: #2a2a32;
+  --bg-input: #18181c;
 
   /* Accent colors */
-  --accent-primary: #7c3aed;
-  --accent-secondary: #4361ee;
-  --accent-gradient: linear-gradient(135deg, #7c3aed 0%, #4361ee 100%);
-  --accent-glow: rgba(124, 58, 237, 0.3);
+  --accent-primary: #6c35de;
+  --accent-secondary: #ff6b35;
+  --accent-gradient: linear-gradient(135deg, #6c35de 0%, #ff6b35 100%);
+  --accent-glow: rgba(108, 53, 222, 0.3);
 
   /* Text colors */
-  --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --text-muted: #a0a0a0;
-  --text-disabled: #666666;
+  --text-primary: #f0f2f5;
+  --text-secondary: #d0d2d5;
+  --text-muted: #9a9ca0;
+  --text-disabled: #5a5c60;
 
   /* Semantic colors */
   --success: #10b981;
@@ -32,15 +32,15 @@
   --info: #3b82f6;
 
   /* Opacity variants */
-  --accent-primary-10: rgba(124, 58, 237, 0.1);
+  --accent-primary-10: rgba(108, 53, 222, 0.1);
   --warning-10: rgba(245, 158, 11, 0.1);
   --warning-30: rgba(245, 158, 11, 0.3);
   --success-30: rgba(16, 185, 129, 0.3);
-  --bg-overlay: rgba(22, 33, 62, 0.8);
+  --bg-overlay: rgba(13, 13, 17, 0.8);
 
   /* Borders and dividers */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --border-color-focus: rgba(124, 58, 237, 0.5);
+  --border-color: rgba(240, 242, 245, 0.1);
+  --border-color-focus: rgba(108, 53, 222, 0.5);
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -69,7 +69,8 @@
   --transition-slow: 350ms ease;
 
   /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-heading: 'Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -119,9 +120,12 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
   font-weight: 600;
   line-height: 1.3;
   color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 h1 { font-size: var(--font-size-3xl); }
@@ -311,6 +315,7 @@ button:disabled {
 }
 
 .landing-headline {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-2xl);
   font-weight: 700;
   margin-bottom: var(--spacing-md);
@@ -318,6 +323,8 @@ button:disabled {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 @media (min-width: 768px) {
@@ -398,8 +405,11 @@ button:disabled {
   padding: var(--spacing-md) var(--spacing-xl);
   background: var(--accent-gradient);
   color: white;
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-lg);
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-glow);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
@@ -499,7 +509,10 @@ button:disabled {
 }
 
 .question-title {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-xl);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -614,7 +627,10 @@ button:disabled {
   padding: var(--spacing-md) var(--spacing-xl);
   background: var(--accent-gradient);
   color: white;
+  font-family: var(--font-family-heading);
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-radius: var(--radius-full);
   transition: opacity var(--transition-fast);
 }
@@ -651,8 +667,11 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-base);
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin-bottom: var(--spacing-xs);
 }
 
@@ -880,8 +899,11 @@ button:disabled {
   padding: var(--spacing-xs) var(--spacing-md);
   background: var(--accent-gradient);
   color: white;
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-sm);
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-radius: var(--radius-full);
   margin-bottom: var(--spacing-md);
 }
@@ -909,8 +931,11 @@ button:disabled {
 }
 
 .recommendation-title {
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-2xl);
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin-bottom: 0;
 }
 
@@ -984,7 +1009,10 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -1066,8 +1094,11 @@ button:disabled {
   padding: var(--spacing-md) var(--spacing-2xl);
   background: var(--success);
   color: white;
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-lg);
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   border-radius: var(--radius-full);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
