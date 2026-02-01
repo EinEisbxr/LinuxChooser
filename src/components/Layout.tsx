@@ -17,7 +17,7 @@ export default function Layout({ children }: LayoutProps) {
 
       <header className="header">
         <motion.a
-          href="/"
+          href="/LinuxChooser/"
           className="logo-link"
           aria-label="Zur Startseite"
           whileHover={{ scale: 1.02 }}
