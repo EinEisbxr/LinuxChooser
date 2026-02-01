@@ -1,18 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import ErrorBoundary from './components/ErrorBoundary.tsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.tsx';
+import ErrorBoundary from './components/ErrorBoundary.tsx';
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById('root');
 if (!rootElement) {
-  throw new Error('Root element not found. Make sure there is a <div id="root"></div> in your HTML.')
+    throw new Error(
+        'Root element not found. Make sure there is a <div id="root"></div> in your HTML.',
+    );
 }
 
 createRoot(rootElement).render(
-  <StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </StrictMode>,
-)
+    <StrictMode>
+        <ErrorBoundary>
+            <App />
+        </ErrorBoundary>
+    </StrictMode>,
+);

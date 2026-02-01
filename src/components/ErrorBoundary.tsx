@@ -2,88 +2,94 @@ import { Component } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode;
+    children: ReactNode;
 }
 
 interface State {
-  hasError: boolean;
-  error: Error | null;
+    hasError: boolean;
+    error: Error | null;
 }
 
 class ErrorBoundary extends Component<Props, State> {
-  state: State = {
-    hasError: false,
-    error: null,
-  };
-
-  static getDerivedStateFromError(error: Error): State {
-    return {
-      hasError: true,
-      error,
+    state: State = {
+        hasError: false,
+        error: null,
     };
-  }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.error('ErrorBoundary caught an error:', error);
-    console.error('Error info:', errorInfo);
-  }
+    static getDerivedStateFromError(error: Error): State {
+        return {
+            hasError: true,
+            error,
+        };
+    }
 
-  handleRestart = (): void => {
-    this.setState({ hasError: false, error: null });
-    window.location.href = '/';
-  };
+    componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+        console.error('ErrorBoundary caught an error:', error);
+        console.error('Error info:', errorInfo);
+    }
 
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="error-boundary">
-          <div className="error-boundary-content">
-            <div className="error-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
-            </div>
-            <h1 className="error-title">Etwas ist schiefgelaufen</h1>
-            <p className="error-message">
-              Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es erneut.
-            </p>
-            {this.state.error && (
-              <details className="error-details">
-                <summary>Technische Details</summary>
-                <pre>{this.state.error.message}</pre>
-              </details>
-            )}
-            <button className="error-restart-button" onClick={this.handleRestart}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-                <path d="M3 3v5h5" />
-              </svg>
-              Neu starten
-            </button>
-          </div>
-          <style>{`
+    handleRestart = (): void => {
+        this.setState({ hasError: false, error: null });
+        window.location.href = '/';
+    };
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div className="error-boundary">
+                    <div className="error-boundary-content">
+                        <div className="error-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="64"
+                                height="64"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="8" x2="12" y2="12" />
+                                <line x1="12" y1="16" x2="12.01" y2="16" />
+                            </svg>
+                        </div>
+                        <h1 className="error-title">
+                            Etwas ist schiefgelaufen
+                        </h1>
+                        <p className="error-message">
+                            Ein unerwarteter Fehler ist aufgetreten. Bitte
+                            versuche es erneut.
+                        </p>
+                        {this.state.error && (
+                            <details className="error-details">
+                                <summary>Technische Details</summary>
+                                <pre>{this.state.error.message}</pre>
+                            </details>
+                        )}
+                        <button
+                            className="error-restart-button"
+                            onClick={this.handleRestart}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                            </svg>
+                            Neu starten
+                        </button>
+                    </div>
+                    <style>{`
             .error-boundary {
               min-height: 100vh;
               display: flex;
@@ -175,12 +181,12 @@ class ErrorBoundary extends Component<Props, State> {
               outline-offset: 2px;
             }
           `}</style>
-        </div>
-      );
-    }
+                </div>
+            );
+        }
 
-    return this.props.children;
-  }
+        return this.props.children;
+    }
 }
 
 export default ErrorBoundary;
